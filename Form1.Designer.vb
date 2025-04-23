@@ -273,6 +273,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox5
         ' 
+        PictureBox5.BackColor = Color.Transparent
+        PictureBox5.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox5.Location = New Point(461, 122)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(139, 202)
@@ -281,6 +283,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox6
         ' 
+        PictureBox6.BackColor = Color.Transparent
+        PictureBox6.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox6.Location = New Point(311, 122)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(139, 202)
@@ -289,6 +293,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox7
         ' 
+        PictureBox7.BackColor = Color.Transparent
+        PictureBox7.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox7.Location = New Point(161, 122)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(139, 202)
@@ -297,6 +303,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox8
         ' 
+        PictureBox8.BackColor = Color.Transparent
+        PictureBox8.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox8.Location = New Point(11, 122)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(139, 202)
@@ -305,6 +313,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox12
         ' 
+        PictureBox12.BackColor = Color.Transparent
+        PictureBox12.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox12.Location = New Point(767, 97)
         PictureBox12.Name = "PictureBox12"
         PictureBox12.Size = New Size(173, 253)
@@ -313,6 +323,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox13
         ' 
+        PictureBox13.BackColor = Color.Transparent
+        PictureBox13.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox13.Location = New Point(611, 122)
         PictureBox13.Name = "PictureBox13"
         PictureBox13.Size = New Size(139, 202)
@@ -321,6 +333,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox2
         ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox2.Location = New Point(802, 367)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(139, 202)
@@ -329,6 +343,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox3
         ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox3.Location = New Point(12, 342)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(173, 253)
@@ -337,6 +353,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox4
         ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox4.Location = New Point(202, 367)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(139, 202)
@@ -345,6 +363,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox9
         ' 
+        PictureBox9.BackColor = Color.Transparent
+        PictureBox9.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox9.Location = New Point(352, 367)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(139, 202)
@@ -353,6 +373,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox10
         ' 
+        PictureBox10.BackColor = Color.Transparent
+        PictureBox10.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox10.Location = New Point(502, 367)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(139, 202)
@@ -361,6 +383,8 @@ Partial Class WNDMain
         ' 
         ' PictureBox11
         ' 
+        PictureBox11.BackColor = Color.Transparent
+        PictureBox11.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox11.Location = New Point(652, 367)
         PictureBox11.Name = "PictureBox11"
         PictureBox11.Size = New Size(139, 202)
@@ -371,9 +395,17 @@ Partial Class WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_5
+        BackgroundImage = My.Resources.Resources.Page_6
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
+        Controls.Add(LBLKeep)
+        Controls.Add(LBLTurn)
+        Controls.Add(BTNLeave)
+        Controls.Add(LBLBank)
+        Controls.Add(BTNPlay)
+        Controls.Add(PictureBox1)
+        Controls.Add(BTNInstructions)
+        Controls.Add(LBLTitle)
         Controls.Add(PictureBox2)
         Controls.Add(PictureBox3)
         Controls.Add(PictureBox4)
@@ -386,23 +418,15 @@ Partial Class WNDMain
         Controls.Add(PictureBox7)
         Controls.Add(PictureBox6)
         Controls.Add(PictureBox5)
-        Controls.Add(LBLKeep)
-        Controls.Add(LBLTurn)
-        Controls.Add(LBLSelectCard)
-        Controls.Add(BTNLeave)
-        Controls.Add(LBLBank)
-        Controls.Add(BTNPlay)
         Controls.Add(BTNSelect100)
         Controls.Add(BTNSelect50)
         Controls.Add(BTNSelect25)
         Controls.Add(BTNSelect10)
         Controls.Add(BTNSelect5)
-        Controls.Add(LBLSelectBet)
-        Controls.Add(PictureBox1)
-        Controls.Add(BTNInstructions)
-        Controls.Add(BTNStart)
-        Controls.Add(LBLTitle)
         Controls.Add(TBXInstructions)
+        Controls.Add(BTNStart)
+        Controls.Add(LBLSelectCard)
+        Controls.Add(LBLSelectBet)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "WNDMain"
