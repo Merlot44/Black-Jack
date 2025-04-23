@@ -28,13 +28,43 @@ Partial Class WNDMain
         BTNInstructions = New Label()
         PictureBox1 = New PictureBox()
         TBXInstructions = New Label()
-        LBLSelect = New Label()
+        LBLSelectBet = New Label()
         BTNSelect5 = New Label()
         BTNSelect10 = New Label()
         BTNSelect25 = New Label()
         BTNSelect50 = New Label()
         BTNSelect100 = New Label()
+        BTNPlay = New Label()
+        LBLBank = New Label()
+        BTNLeave = New Label()
+        LBLSelectCard = New Label()
+        LBLTurn = New Label()
+        LBLKeep = New Label()
+        PictureBox5 = New PictureBox()
+        PictureBox6 = New PictureBox()
+        PictureBox7 = New PictureBox()
+        PictureBox8 = New PictureBox()
+        PictureBox12 = New PictureBox()
+        PictureBox13 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox9 = New PictureBox()
+        PictureBox10 = New PictureBox()
+        PictureBox11 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LBLTitle
@@ -97,17 +127,17 @@ Partial Class WNDMain
         TBXInstructions.Text = resources.GetString("TBXInstructions.Text")
         TBXInstructions.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' LBLSelect
+        ' LBLSelectBet
         ' 
-        LBLSelect.BackColor = Color.Transparent
-        LBLSelect.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLSelect.ForeColor = Color.White
-        LBLSelect.Location = New Point(219, 72)
-        LBLSelect.Name = "LBLSelect"
-        LBLSelect.Size = New Size(522, 117)
-        LBLSelect.TabIndex = 5
-        LBLSelect.Text = "Veuillez sélectionner une mise!"
-        LBLSelect.TextAlign = ContentAlignment.MiddleCenter
+        LBLSelectBet.BackColor = Color.Transparent
+        LBLSelectBet.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLSelectBet.ForeColor = Color.White
+        LBLSelectBet.Location = New Point(219, 72)
+        LBLSelectBet.Name = "LBLSelectBet"
+        LBLSelectBet.Size = New Size(522, 117)
+        LBLSelectBet.TabIndex = 5
+        LBLSelectBet.Text = "Veuillez sélectionner une mise!"
+        LBLSelectBet.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' BTNSelect5
         ' 
@@ -169,19 +199,205 @@ Partial Class WNDMain
         BTNSelect100.Text = "100"
         BTNSelect100.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' BTNPlay
+        ' 
+        BTNPlay.BackColor = Color.Transparent
+        BTNPlay.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BTNPlay.ForeColor = Color.White
+        BTNPlay.Location = New Point(488, 551)
+        BTNPlay.Name = "BTNPlay"
+        BTNPlay.Size = New Size(278, 97)
+        BTNPlay.TabIndex = 11
+        BTNPlay.Text = "Débuter"
+        BTNPlay.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' LBLBank
+        ' 
+        LBLBank.BackColor = Color.Transparent
+        LBLBank.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBank.ForeColor = Color.White
+        LBLBank.Location = New Point(186, 551)
+        LBLBank.Name = "LBLBank"
+        LBLBank.Size = New Size(278, 97)
+        LBLBank.TabIndex = 12
+        LBLBank.Text = "Banque: 500"
+        LBLBank.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' BTNLeave
+        ' 
+        BTNLeave.BackColor = Color.Transparent
+        BTNLeave.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BTNLeave.ForeColor = Color.White
+        BTNLeave.Location = New Point(47, 555)
+        BTNLeave.Name = "BTNLeave"
+        BTNLeave.Size = New Size(278, 96)
+        BTNLeave.TabIndex = 13
+        BTNLeave.Text = "Quitter"
+        BTNLeave.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' LBLSelectCard
+        ' 
+        LBLSelectCard.BackColor = Color.Transparent
+        LBLSelectCard.Font = New Font("Comic Sans MS", 20F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLSelectCard.ForeColor = Color.White
+        LBLSelectCard.Location = New Point(219, 20)
+        LBLSelectCard.Name = "LBLSelectCard"
+        LBLSelectCard.Size = New Size(522, 75)
+        LBLSelectCard.TabIndex = 14
+        LBLSelectCard.Text = "Veuillez sélectionner un option" & vbCrLf & "(rappelez-vous de ne pas dépasser 21!)" & vbCrLf
+        LBLSelectCard.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' LBLTurn
+        ' 
+        LBLTurn.BackColor = Color.Transparent
+        LBLTurn.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLTurn.ForeColor = Color.White
+        LBLTurn.Location = New Point(47, 608)
+        LBLTurn.Name = "LBLTurn"
+        LBLTurn.Size = New Size(278, 95)
+        LBLTurn.TabIndex = 15
+        LBLTurn.Text = "Tourner"
+        LBLTurn.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' LBLKeep
+        ' 
+        LBLKeep.BackColor = Color.Transparent
+        LBLKeep.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLKeep.ForeColor = Color.White
+        LBLKeep.Location = New Point(635, 607)
+        LBLKeep.Name = "LBLKeep"
+        LBLKeep.Size = New Size(278, 97)
+        LBLKeep.TabIndex = 16
+        LBLKeep.Text = "Garder"
+        LBLKeep.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Location = New Point(461, 122)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(139, 202)
+        PictureBox5.TabIndex = 20
+        PictureBox5.TabStop = False
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.Location = New Point(311, 122)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(139, 202)
+        PictureBox6.TabIndex = 21
+        PictureBox6.TabStop = False
+        ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.Location = New Point(161, 122)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(139, 202)
+        PictureBox7.TabIndex = 22
+        PictureBox7.TabStop = False
+        ' 
+        ' PictureBox8
+        ' 
+        PictureBox8.Location = New Point(11, 122)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(139, 202)
+        PictureBox8.TabIndex = 23
+        PictureBox8.TabStop = False
+        ' 
+        ' PictureBox12
+        ' 
+        PictureBox12.Location = New Point(767, 97)
+        PictureBox12.Name = "PictureBox12"
+        PictureBox12.Size = New Size(173, 253)
+        PictureBox12.TabIndex = 27
+        PictureBox12.TabStop = False
+        ' 
+        ' PictureBox13
+        ' 
+        PictureBox13.Location = New Point(611, 122)
+        PictureBox13.Name = "PictureBox13"
+        PictureBox13.Size = New Size(139, 202)
+        PictureBox13.TabIndex = 28
+        PictureBox13.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Location = New Point(802, 367)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(139, 202)
+        PictureBox2.TabIndex = 34
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Location = New Point(12, 342)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(173, 253)
+        PictureBox3.TabIndex = 33
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Location = New Point(202, 367)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(139, 202)
+        PictureBox4.TabIndex = 32
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Location = New Point(352, 367)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(139, 202)
+        PictureBox9.TabIndex = 31
+        PictureBox9.TabStop = False
+        ' 
+        ' PictureBox10
+        ' 
+        PictureBox10.Location = New Point(502, 367)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(139, 202)
+        PictureBox10.TabIndex = 30
+        PictureBox10.TabStop = False
+        ' 
+        ' PictureBox11
+        ' 
+        PictureBox11.Location = New Point(652, 367)
+        PictureBox11.Name = "PictureBox11"
+        PictureBox11.Size = New Size(139, 202)
+        PictureBox11.TabIndex = 29
+        PictureBox11.TabStop = False
+        ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_3
+        BackgroundImage = My.Resources.Resources.Page_5
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox3)
+        Controls.Add(PictureBox4)
+        Controls.Add(PictureBox9)
+        Controls.Add(PictureBox10)
+        Controls.Add(PictureBox11)
+        Controls.Add(PictureBox13)
+        Controls.Add(PictureBox12)
+        Controls.Add(PictureBox8)
+        Controls.Add(PictureBox7)
+        Controls.Add(PictureBox6)
+        Controls.Add(PictureBox5)
+        Controls.Add(LBLKeep)
+        Controls.Add(LBLTurn)
+        Controls.Add(LBLSelectCard)
+        Controls.Add(BTNLeave)
+        Controls.Add(LBLBank)
+        Controls.Add(BTNPlay)
         Controls.Add(BTNSelect100)
         Controls.Add(BTNSelect50)
         Controls.Add(BTNSelect25)
         Controls.Add(BTNSelect10)
         Controls.Add(BTNSelect5)
-        Controls.Add(LBLSelect)
+        Controls.Add(LBLSelectBet)
         Controls.Add(PictureBox1)
         Controls.Add(BTNInstructions)
         Controls.Add(BTNStart)
@@ -192,6 +408,18 @@ Partial Class WNDMain
         Name = "WNDMain"
         Text = "Black Jack"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -200,11 +428,29 @@ Partial Class WNDMain
     Friend WithEvents BTNInstructions As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TBXInstructions As Label
-    Friend WithEvents LBLSelect As Label
+    Friend WithEvents LBLSelectBet As Label
     Friend WithEvents BTNSelect5 As Label
     Friend WithEvents BTNSelect10 As Label
     Friend WithEvents BTNSelect25 As Label
     Friend WithEvents BTNSelect50 As Label
     Friend WithEvents BTNSelect100 As Label
+    Friend WithEvents BTNPlay As Label
+    Friend WithEvents LBLBank As Label
+    Friend WithEvents BTNLeave As Label
+    Friend WithEvents LBLSelectCard As Label
+    Friend WithEvents LBLTurn As Label
+    Friend WithEvents LBLKeep As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents PictureBox11 As PictureBox
 
 End Class
