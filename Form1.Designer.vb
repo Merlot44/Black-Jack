@@ -26,7 +26,7 @@ Partial Class WNDMain
         LBLTitle = New Label()
         BTNStart = New Label()
         BTNInstructions = New Label()
-        PictureBox1 = New PictureBox()
+        BTNSound = New PictureBox()
         TBXInstructions = New Label()
         LBLSelectBet = New Label()
         BTNSelect5 = New Label()
@@ -38,33 +38,40 @@ Partial Class WNDMain
         LBLBank = New Label()
         BTNLeave = New Label()
         LBLSelectCard = New Label()
-        LBLTurn = New Label()
-        LBLKeep = New Label()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
-        PictureBox7 = New PictureBox()
-        PictureBox8 = New PictureBox()
-        PictureBox12 = New PictureBox()
-        PictureBox13 = New PictureBox()
-        PictureBox2 = New PictureBox()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox9 = New PictureBox()
-        PictureBox10 = New PictureBox()
-        PictureBox11 = New PictureBox()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
+        BTNTurn = New Label()
+        BTNKeep = New Label()
+        PBXCard2Dealer = New PictureBox()
+        PBXCard3Dealer = New PictureBox()
+        PBXCard4Dealer = New PictureBox()
+        PBXCard5Dealer = New PictureBox()
+        PBXCardBackDealer = New PictureBox()
+        PBXCard1Dealer = New PictureBox()
+        PBXCard5Player = New PictureBox()
+        PBXCardBackPlayer = New PictureBox()
+        PBXCard1Player = New PictureBox()
+        PBXCard2Player = New PictureBox()
+        PBXCard3Player = New PictureBox()
+        PBXCard4Player = New PictureBox()
+        LBLWinPoints = New Label()
+        LBLWinMessage = New Label()
+        LBLStatPoints = New Label()
+        LBLStatGamesPlayed = New Label()
+        LBLStatPointsValue = New Label()
+        BTNRestart = New Label()
+        LBLStatGamesPlayedValue = New Label()
+        CType(BTNSound, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard2Dealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard3Dealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard4Dealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard5Dealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCardBackDealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard1Dealer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard5Player, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCardBackPlayer, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard1Player, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard2Player, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard3Player, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PBXCard4Player, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LBLTitle
@@ -103,16 +110,16 @@ Partial Class WNDMain
         BTNInstructions.Text = "Instructions"
         BTNInstructions.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' PictureBox1
+        ' BTNSound
         ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.BackgroundImage = My.Resources.Resources.Unmute
-        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox1.Location = New Point(896, 12)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(50, 50)
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
+        BTNSound.BackColor = Color.Transparent
+        BTNSound.BackgroundImage = My.Resources.Resources.Unmute
+        BTNSound.BackgroundImageLayout = ImageLayout.Zoom
+        BTNSound.Location = New Point(896, 12)
+        BTNSound.Name = "BTNSound"
+        BTNSound.Size = New Size(50, 50)
+        BTNSound.TabIndex = 3
+        BTNSound.TabStop = False
         ' 
         ' TBXInstructions
         ' 
@@ -126,6 +133,7 @@ Partial Class WNDMain
         TBXInstructions.TabIndex = 4
         TBXInstructions.Text = resources.GetString("TBXInstructions.Text")
         TBXInstructions.TextAlign = ContentAlignment.MiddleCenter
+        TBXInstructions.Visible = False
         ' 
         ' LBLSelectBet
         ' 
@@ -138,6 +146,7 @@ Partial Class WNDMain
         LBLSelectBet.TabIndex = 5
         LBLSelectBet.Text = "Veuillez sélectionner une mise!"
         LBLSelectBet.TextAlign = ContentAlignment.MiddleCenter
+        LBLSelectBet.Visible = False
         ' 
         ' BTNSelect5
         ' 
@@ -150,6 +159,7 @@ Partial Class WNDMain
         BTNSelect5.TabIndex = 6
         BTNSelect5.Text = "5"
         BTNSelect5.TextAlign = ContentAlignment.MiddleCenter
+        BTNSelect5.Visible = False
         ' 
         ' BTNSelect10
         ' 
@@ -162,6 +172,7 @@ Partial Class WNDMain
         BTNSelect10.TabIndex = 7
         BTNSelect10.Text = "10"
         BTNSelect10.TextAlign = ContentAlignment.MiddleCenter
+        BTNSelect10.Visible = False
         ' 
         ' BTNSelect25
         ' 
@@ -174,6 +185,7 @@ Partial Class WNDMain
         BTNSelect25.TabIndex = 8
         BTNSelect25.Text = "25"
         BTNSelect25.TextAlign = ContentAlignment.MiddleCenter
+        BTNSelect25.Visible = False
         ' 
         ' BTNSelect50
         ' 
@@ -186,6 +198,7 @@ Partial Class WNDMain
         BTNSelect50.TabIndex = 9
         BTNSelect50.Text = "50"
         BTNSelect50.TextAlign = ContentAlignment.MiddleCenter
+        BTNSelect50.Visible = False
         ' 
         ' BTNSelect100
         ' 
@@ -198,6 +211,7 @@ Partial Class WNDMain
         BTNSelect100.TabIndex = 10
         BTNSelect100.Text = "100"
         BTNSelect100.TextAlign = ContentAlignment.MiddleCenter
+        BTNSelect100.Visible = False
         ' 
         ' BTNPlay
         ' 
@@ -210,6 +224,7 @@ Partial Class WNDMain
         BTNPlay.TabIndex = 11
         BTNPlay.Text = "Débuter"
         BTNPlay.TextAlign = ContentAlignment.MiddleCenter
+        BTNPlay.Visible = False
         ' 
         ' LBLBank
         ' 
@@ -222,6 +237,7 @@ Partial Class WNDMain
         LBLBank.TabIndex = 12
         LBLBank.Text = "Banque: 500"
         LBLBank.TextAlign = ContentAlignment.MiddleCenter
+        LBLBank.Visible = False
         ' 
         ' BTNLeave
         ' 
@@ -234,6 +250,7 @@ Partial Class WNDMain
         BTNLeave.TabIndex = 13
         BTNLeave.Text = "Quitter"
         BTNLeave.TextAlign = ContentAlignment.MiddleCenter
+        BTNLeave.Visible = False
         ' 
         ' LBLSelectCard
         ' 
@@ -246,178 +263,284 @@ Partial Class WNDMain
         LBLSelectCard.TabIndex = 14
         LBLSelectCard.Text = "Veuillez sélectionner un option" & vbCrLf & "(rappelez-vous de ne pas dépasser 21!)" & vbCrLf
         LBLSelectCard.TextAlign = ContentAlignment.MiddleCenter
+        LBLSelectCard.Visible = False
         ' 
-        ' LBLTurn
+        ' BTNTurn
         ' 
-        LBLTurn.BackColor = Color.Transparent
-        LBLTurn.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLTurn.ForeColor = Color.White
-        LBLTurn.Location = New Point(47, 608)
-        LBLTurn.Name = "LBLTurn"
-        LBLTurn.Size = New Size(278, 95)
-        LBLTurn.TabIndex = 15
-        LBLTurn.Text = "Tourner"
-        LBLTurn.TextAlign = ContentAlignment.MiddleCenter
+        BTNTurn.BackColor = Color.Transparent
+        BTNTurn.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BTNTurn.ForeColor = Color.White
+        BTNTurn.Location = New Point(47, 608)
+        BTNTurn.Name = "BTNTurn"
+        BTNTurn.Size = New Size(278, 95)
+        BTNTurn.TabIndex = 15
+        BTNTurn.Text = "Tourner"
+        BTNTurn.TextAlign = ContentAlignment.MiddleCenter
+        BTNTurn.Visible = False
         ' 
-        ' LBLKeep
+        ' BTNKeep
         ' 
-        LBLKeep.BackColor = Color.Transparent
-        LBLKeep.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLKeep.ForeColor = Color.White
-        LBLKeep.Location = New Point(635, 607)
-        LBLKeep.Name = "LBLKeep"
-        LBLKeep.Size = New Size(278, 97)
-        LBLKeep.TabIndex = 16
-        LBLKeep.Text = "Garder"
-        LBLKeep.TextAlign = ContentAlignment.MiddleCenter
+        BTNKeep.BackColor = Color.Transparent
+        BTNKeep.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BTNKeep.ForeColor = Color.White
+        BTNKeep.Location = New Point(635, 607)
+        BTNKeep.Name = "BTNKeep"
+        BTNKeep.Size = New Size(278, 97)
+        BTNKeep.TabIndex = 16
+        BTNKeep.Text = "Garder"
+        BTNKeep.TextAlign = ContentAlignment.MiddleCenter
+        BTNKeep.Visible = False
         ' 
-        ' PictureBox5
+        ' PBXCard2Dealer
         ' 
-        PictureBox5.BackColor = Color.Transparent
-        PictureBox5.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox5.Location = New Point(461, 122)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(139, 202)
-        PictureBox5.TabIndex = 20
-        PictureBox5.TabStop = False
+        PBXCard2Dealer.BackColor = Color.Transparent
+        PBXCard2Dealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard2Dealer.Location = New Point(461, 122)
+        PBXCard2Dealer.Name = "PBXCard2Dealer"
+        PBXCard2Dealer.Size = New Size(139, 202)
+        PBXCard2Dealer.TabIndex = 20
+        PBXCard2Dealer.TabStop = False
+        PBXCard2Dealer.Visible = False
         ' 
-        ' PictureBox6
+        ' PBXCard3Dealer
         ' 
-        PictureBox6.BackColor = Color.Transparent
-        PictureBox6.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox6.Location = New Point(311, 122)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(139, 202)
-        PictureBox6.TabIndex = 21
-        PictureBox6.TabStop = False
+        PBXCard3Dealer.BackColor = Color.Transparent
+        PBXCard3Dealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard3Dealer.Location = New Point(311, 122)
+        PBXCard3Dealer.Name = "PBXCard3Dealer"
+        PBXCard3Dealer.Size = New Size(139, 202)
+        PBXCard3Dealer.TabIndex = 21
+        PBXCard3Dealer.TabStop = False
+        PBXCard3Dealer.Visible = False
         ' 
-        ' PictureBox7
+        ' PBXCard4Dealer
         ' 
-        PictureBox7.BackColor = Color.Transparent
-        PictureBox7.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox7.Location = New Point(161, 122)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(139, 202)
-        PictureBox7.TabIndex = 22
-        PictureBox7.TabStop = False
+        PBXCard4Dealer.BackColor = Color.Transparent
+        PBXCard4Dealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard4Dealer.Location = New Point(161, 122)
+        PBXCard4Dealer.Name = "PBXCard4Dealer"
+        PBXCard4Dealer.Size = New Size(139, 202)
+        PBXCard4Dealer.TabIndex = 22
+        PBXCard4Dealer.TabStop = False
+        PBXCard4Dealer.Visible = False
         ' 
-        ' PictureBox8
+        ' PBXCard5Dealer
         ' 
-        PictureBox8.BackColor = Color.Transparent
-        PictureBox8.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox8.Location = New Point(11, 122)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(139, 202)
-        PictureBox8.TabIndex = 23
-        PictureBox8.TabStop = False
+        PBXCard5Dealer.BackColor = Color.Transparent
+        PBXCard5Dealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard5Dealer.Location = New Point(11, 122)
+        PBXCard5Dealer.Name = "PBXCard5Dealer"
+        PBXCard5Dealer.Size = New Size(139, 202)
+        PBXCard5Dealer.TabIndex = 23
+        PBXCard5Dealer.TabStop = False
+        PBXCard5Dealer.Visible = False
         ' 
-        ' PictureBox12
+        ' PBXCardBackDealer
         ' 
-        PictureBox12.BackColor = Color.Transparent
-        PictureBox12.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox12.Location = New Point(767, 97)
-        PictureBox12.Name = "PictureBox12"
-        PictureBox12.Size = New Size(173, 253)
-        PictureBox12.TabIndex = 27
-        PictureBox12.TabStop = False
+        PBXCardBackDealer.BackColor = Color.Transparent
+        PBXCardBackDealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCardBackDealer.Location = New Point(767, 97)
+        PBXCardBackDealer.Name = "PBXCardBackDealer"
+        PBXCardBackDealer.Size = New Size(173, 253)
+        PBXCardBackDealer.TabIndex = 27
+        PBXCardBackDealer.TabStop = False
+        PBXCardBackDealer.Visible = False
         ' 
-        ' PictureBox13
+        ' PBXCard1Dealer
         ' 
-        PictureBox13.BackColor = Color.Transparent
-        PictureBox13.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox13.Location = New Point(611, 122)
-        PictureBox13.Name = "PictureBox13"
-        PictureBox13.Size = New Size(139, 202)
-        PictureBox13.TabIndex = 28
-        PictureBox13.TabStop = False
+        PBXCard1Dealer.BackColor = Color.Transparent
+        PBXCard1Dealer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard1Dealer.Location = New Point(611, 122)
+        PBXCard1Dealer.Name = "PBXCard1Dealer"
+        PBXCard1Dealer.Size = New Size(139, 202)
+        PBXCard1Dealer.TabIndex = 28
+        PBXCard1Dealer.TabStop = False
+        PBXCard1Dealer.Visible = False
         ' 
-        ' PictureBox2
+        ' PBXCard5Player
         ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox2.Location = New Point(802, 367)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(139, 202)
-        PictureBox2.TabIndex = 34
-        PictureBox2.TabStop = False
+        PBXCard5Player.BackColor = Color.Transparent
+        PBXCard5Player.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard5Player.Location = New Point(802, 367)
+        PBXCard5Player.Name = "PBXCard5Player"
+        PBXCard5Player.Size = New Size(139, 202)
+        PBXCard5Player.TabIndex = 34
+        PBXCard5Player.TabStop = False
+        PBXCard5Player.Visible = False
         ' 
-        ' PictureBox3
+        ' PBXCardBackPlayer
         ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox3.Location = New Point(12, 342)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(173, 253)
-        PictureBox3.TabIndex = 33
-        PictureBox3.TabStop = False
+        PBXCardBackPlayer.BackColor = Color.Transparent
+        PBXCardBackPlayer.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCardBackPlayer.Location = New Point(12, 342)
+        PBXCardBackPlayer.Name = "PBXCardBackPlayer"
+        PBXCardBackPlayer.Size = New Size(173, 253)
+        PBXCardBackPlayer.TabIndex = 33
+        PBXCardBackPlayer.TabStop = False
+        PBXCardBackPlayer.Visible = False
         ' 
-        ' PictureBox4
+        ' PBXCard1Player
         ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox4.Location = New Point(202, 367)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(139, 202)
-        PictureBox4.TabIndex = 32
-        PictureBox4.TabStop = False
+        PBXCard1Player.BackColor = Color.Transparent
+        PBXCard1Player.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard1Player.Location = New Point(202, 367)
+        PBXCard1Player.Name = "PBXCard1Player"
+        PBXCard1Player.Size = New Size(139, 202)
+        PBXCard1Player.TabIndex = 32
+        PBXCard1Player.TabStop = False
+        PBXCard1Player.Visible = False
         ' 
-        ' PictureBox9
+        ' PBXCard2Player
         ' 
-        PictureBox9.BackColor = Color.Transparent
-        PictureBox9.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox9.Location = New Point(352, 367)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(139, 202)
-        PictureBox9.TabIndex = 31
-        PictureBox9.TabStop = False
+        PBXCard2Player.BackColor = Color.Transparent
+        PBXCard2Player.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard2Player.Location = New Point(352, 367)
+        PBXCard2Player.Name = "PBXCard2Player"
+        PBXCard2Player.Size = New Size(139, 202)
+        PBXCard2Player.TabIndex = 31
+        PBXCard2Player.TabStop = False
+        PBXCard2Player.Visible = False
         ' 
-        ' PictureBox10
+        ' PBXCard3Player
         ' 
-        PictureBox10.BackColor = Color.Transparent
-        PictureBox10.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox10.Location = New Point(502, 367)
-        PictureBox10.Name = "PictureBox10"
-        PictureBox10.Size = New Size(139, 202)
-        PictureBox10.TabIndex = 30
-        PictureBox10.TabStop = False
+        PBXCard3Player.BackColor = Color.Transparent
+        PBXCard3Player.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard3Player.Location = New Point(502, 367)
+        PBXCard3Player.Name = "PBXCard3Player"
+        PBXCard3Player.Size = New Size(139, 202)
+        PBXCard3Player.TabIndex = 30
+        PBXCard3Player.TabStop = False
+        PBXCard3Player.Visible = False
         ' 
-        ' PictureBox11
+        ' PBXCard4Player
         ' 
-        PictureBox11.BackColor = Color.Transparent
-        PictureBox11.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox11.Location = New Point(652, 367)
-        PictureBox11.Name = "PictureBox11"
-        PictureBox11.Size = New Size(139, 202)
-        PictureBox11.TabIndex = 29
-        PictureBox11.TabStop = False
+        PBXCard4Player.BackColor = Color.Transparent
+        PBXCard4Player.BackgroundImageLayout = ImageLayout.Zoom
+        PBXCard4Player.Location = New Point(652, 367)
+        PBXCard4Player.Name = "PBXCard4Player"
+        PBXCard4Player.Size = New Size(139, 202)
+        PBXCard4Player.TabIndex = 29
+        PBXCard4Player.TabStop = False
+        PBXCard4Player.Visible = False
+        ' 
+        ' LBLWinPoints
+        ' 
+        LBLWinPoints.BackColor = Color.Transparent
+        LBLWinPoints.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLWinPoints.ForeColor = Color.White
+        LBLWinPoints.Location = New Point(196, 282)
+        LBLWinPoints.Name = "LBLWinPoints"
+        LBLWinPoints.Size = New Size(568, 156)
+        LBLWinPoints.TabIndex = 35
+        LBLWinPoints.Text = "Vous avez gagné 999 points!"
+        LBLWinPoints.TextAlign = ContentAlignment.MiddleCenter
+        LBLWinPoints.Visible = False
+        ' 
+        ' LBLWinMessage
+        ' 
+        LBLWinMessage.BackColor = Color.Transparent
+        LBLWinMessage.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLWinMessage.ForeColor = Color.White
+        LBLWinMessage.Location = New Point(132, 50)
+        LBLWinMessage.Name = "LBLWinMessage"
+        LBLWinMessage.Size = New Size(696, 160)
+        LBLWinMessage.TabIndex = 36
+        LBLWinMessage.Text = "Le match est terminé," & vbCrLf & "Vous avez gagnés!"
+        LBLWinMessage.TextAlign = ContentAlignment.MiddleCenter
+        LBLWinMessage.Visible = False
+        ' 
+        ' LBLStatPoints
+        ' 
+        LBLStatPoints.BackColor = Color.Transparent
+        LBLStatPoints.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLStatPoints.ForeColor = Color.White
+        LBLStatPoints.Location = New Point(242, 300)
+        LBLStatPoints.Name = "LBLStatPoints"
+        LBLStatPoints.Size = New Size(354, 81)
+        LBLStatPoints.TabIndex = 37
+        LBLStatPoints.Text = "Points"
+        LBLStatPoints.TextAlign = ContentAlignment.MiddleCenter
+        LBLStatPoints.Visible = False
+        ' 
+        ' LBLStatGamesPlayed
+        ' 
+        LBLStatGamesPlayed.BackColor = Color.Transparent
+        LBLStatGamesPlayed.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLStatGamesPlayed.ForeColor = Color.White
+        LBLStatGamesPlayed.Location = New Point(242, 403)
+        LBLStatGamesPlayed.Name = "LBLStatGamesPlayed"
+        LBLStatGamesPlayed.Size = New Size(354, 81)
+        LBLStatGamesPlayed.TabIndex = 38
+        LBLStatGamesPlayed.Text = "Joutes gagnés"
+        LBLStatGamesPlayed.TextAlign = ContentAlignment.MiddleCenter
+        LBLStatGamesPlayed.Visible = False
+        ' 
+        ' LBLStatPointsValue
+        ' 
+        LBLStatPointsValue.BackColor = Color.Transparent
+        LBLStatPointsValue.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLStatPointsValue.ForeColor = Color.White
+        LBLStatPointsValue.Location = New Point(619, 300)
+        LBLStatPointsValue.Name = "LBLStatPointsValue"
+        LBLStatPointsValue.Size = New Size(98, 81)
+        LBLStatPointsValue.TabIndex = 39
+        LBLStatPointsValue.Text = "999"
+        LBLStatPointsValue.TextAlign = ContentAlignment.MiddleCenter
+        LBLStatPointsValue.Visible = False
+        ' 
+        ' BTNRestart
+        ' 
+        BTNRestart.BackColor = Color.Transparent
+        BTNRestart.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BTNRestart.ForeColor = Color.White
+        BTNRestart.Location = New Point(281, 574)
+        BTNRestart.Name = "BTNRestart"
+        BTNRestart.Size = New Size(398, 96)
+        BTNRestart.TabIndex = 41
+        BTNRestart.Text = "Recommencer"
+        BTNRestart.TextAlign = ContentAlignment.MiddleCenter
+        BTNRestart.Visible = False
+        ' 
+        ' LBLStatGamesPlayedValue
+        ' 
+        LBLStatGamesPlayedValue.BackColor = Color.Transparent
+        LBLStatGamesPlayedValue.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLStatGamesPlayedValue.ForeColor = Color.White
+        LBLStatGamesPlayedValue.Location = New Point(619, 403)
+        LBLStatGamesPlayedValue.Name = "LBLStatGamesPlayedValue"
+        LBLStatGamesPlayedValue.Size = New Size(98, 81)
+        LBLStatGamesPlayedValue.TabIndex = 40
+        LBLStatGamesPlayedValue.Text = "9"
+        LBLStatGamesPlayedValue.TextAlign = ContentAlignment.MiddleCenter
+        LBLStatGamesPlayedValue.Visible = False
         ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_6
+        BackgroundImage = My.Resources.Resources.Page_1
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
-        Controls.Add(LBLKeep)
-        Controls.Add(LBLTurn)
+        Controls.Add(BTNKeep)
+        Controls.Add(BTNTurn)
         Controls.Add(BTNLeave)
         Controls.Add(LBLBank)
         Controls.Add(BTNPlay)
-        Controls.Add(PictureBox1)
+        Controls.Add(BTNSound)
         Controls.Add(BTNInstructions)
         Controls.Add(LBLTitle)
-        Controls.Add(PictureBox2)
-        Controls.Add(PictureBox3)
-        Controls.Add(PictureBox4)
-        Controls.Add(PictureBox9)
-        Controls.Add(PictureBox10)
-        Controls.Add(PictureBox11)
-        Controls.Add(PictureBox13)
-        Controls.Add(PictureBox12)
-        Controls.Add(PictureBox8)
-        Controls.Add(PictureBox7)
-        Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
+        Controls.Add(PBXCard5Player)
+        Controls.Add(PBXCardBackPlayer)
+        Controls.Add(PBXCard1Player)
+        Controls.Add(PBXCard2Player)
+        Controls.Add(PBXCard3Player)
+        Controls.Add(PBXCard4Player)
+        Controls.Add(PBXCard1Dealer)
+        Controls.Add(PBXCardBackDealer)
+        Controls.Add(PBXCard5Dealer)
+        Controls.Add(PBXCard4Dealer)
+        Controls.Add(PBXCard3Dealer)
+        Controls.Add(PBXCard2Dealer)
         Controls.Add(BTNSelect100)
         Controls.Add(BTNSelect50)
         Controls.Add(BTNSelect25)
@@ -427,30 +550,37 @@ Partial Class WNDMain
         Controls.Add(BTNStart)
         Controls.Add(LBLSelectCard)
         Controls.Add(LBLSelectBet)
+        Controls.Add(LBLStatGamesPlayedValue)
+        Controls.Add(LBLStatPointsValue)
+        Controls.Add(LBLStatGamesPlayed)
+        Controls.Add(LBLStatPoints)
+        Controls.Add(BTNRestart)
+        Controls.Add(LBLWinMessage)
+        Controls.Add(LBLWinPoints)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "WNDMain"
         Text = "Black Jack"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
+        CType(BTNSound, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard2Dealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard3Dealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard4Dealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard5Dealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCardBackDealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard1Dealer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard5Player, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCardBackPlayer, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard1Player, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard2Player, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard3Player, ComponentModel.ISupportInitialize).EndInit()
+        CType(PBXCard4Player, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents LBLTitle As Label
     Friend WithEvents BTNStart As Label
     Friend WithEvents BTNInstructions As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BTNSound As PictureBox
     Friend WithEvents TBXInstructions As Label
     Friend WithEvents LBLSelectBet As Label
     Friend WithEvents BTNSelect5 As Label
@@ -462,19 +592,26 @@ Partial Class WNDMain
     Friend WithEvents LBLBank As Label
     Friend WithEvents BTNLeave As Label
     Friend WithEvents LBLSelectCard As Label
-    Friend WithEvents LBLTurn As Label
-    Friend WithEvents LBLKeep As Label
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents BTNTurn As Label
+    Friend WithEvents BTNKeep As Label
+    Friend WithEvents PBXCard2Dealer As PictureBox
+    Friend WithEvents PBXCard3Dealer As PictureBox
+    Friend WithEvents PBXCard4Dealer As PictureBox
+    Friend WithEvents PBXCard5Dealer As PictureBox
+    Friend WithEvents PBXCardBackDealer As PictureBox
+    Friend WithEvents PBXCard1Dealer As PictureBox
+    Friend WithEvents PBXCard5Player As PictureBox
+    Friend WithEvents PBXCardBackPlayer As PictureBox
+    Friend WithEvents PBXCard1Player As PictureBox
+    Friend WithEvents PBXCard2Player As PictureBox
+    Friend WithEvents PBXCard3Player As PictureBox
+    Friend WithEvents PBXCard4Player As PictureBox
+    Friend WithEvents LBLWinPoints As Label
+    Friend WithEvents LBLWinMessage As Label
+    Friend WithEvents LBLStatPoints As Label
+    Friend WithEvents LBLStatGamesPlayed As Label
+    Friend WithEvents LBLStatPointsValue As Label
+    Friend WithEvents BTNRestart As Label
+    Friend WithEvents LBLStatGamesPlayedValue As Label
 
 End Class
