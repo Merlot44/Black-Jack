@@ -35,7 +35,7 @@ Partial Class WNDMain
         BTNSelect50 = New Label()
         BTNSelect100 = New Label()
         BTNPlay = New Label()
-        LBLBank = New Label()
+        LBLBank1 = New Label()
         BTNLeave = New Label()
         LBLSelectCard = New Label()
         BTNTurn = New Label()
@@ -59,6 +59,11 @@ Partial Class WNDMain
         LBLStatPointsValue = New Label()
         BTNRestart = New Label()
         LBLStatGamesPlayedValue = New Label()
+        LBLBet1 = New Label()
+        LBLMaxBet = New Label()
+        LBLBroke = New Label()
+        LBLBet2 = New Label()
+        LBLBank2 = New Label()
         CType(BTNSound, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard2Dealer, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard3Dealer, ComponentModel.ISupportInitialize).BeginInit()
@@ -226,18 +231,18 @@ Partial Class WNDMain
         BTNPlay.TextAlign = ContentAlignment.MiddleCenter
         BTNPlay.Visible = False
         ' 
-        ' LBLBank
+        ' LBLBank1
         ' 
-        LBLBank.BackColor = Color.Transparent
-        LBLBank.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLBank.ForeColor = Color.White
-        LBLBank.Location = New Point(186, 551)
-        LBLBank.Name = "LBLBank"
-        LBLBank.Size = New Size(278, 97)
-        LBLBank.TabIndex = 12
-        LBLBank.Text = "Banque: 500"
-        LBLBank.TextAlign = ContentAlignment.MiddleCenter
-        LBLBank.Visible = False
+        LBLBank1.BackColor = Color.Transparent
+        LBLBank1.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBank1.ForeColor = Color.White
+        LBLBank1.Location = New Point(186, 551)
+        LBLBank1.Name = "LBLBank1"
+        LBLBank1.Size = New Size(278, 97)
+        LBLBank1.TabIndex = 12
+        LBLBank1.Text = "Banque: 500"
+        LBLBank1.TextAlign = ContentAlignment.MiddleCenter
+        LBLBank1.Visible = False
         ' 
         ' BTNLeave
         ' 
@@ -261,7 +266,7 @@ Partial Class WNDMain
         LBLSelectCard.Name = "LBLSelectCard"
         LBLSelectCard.Size = New Size(522, 75)
         LBLSelectCard.TabIndex = 14
-        LBLSelectCard.Text = "Veuillez sélectionner un option" & vbCrLf & "(rappelez-vous de ne pas dépasser 21!)" & vbCrLf
+        LBLSelectCard.Text = "Que voulez-vous faire?" & vbCrLf & "(rappelez-vous de ne pas dépasser 21!)" & vbCrLf
         LBLSelectCard.TextAlign = ContentAlignment.MiddleCenter
         LBLSelectCard.Visible = False
         ' 
@@ -294,6 +299,7 @@ Partial Class WNDMain
         ' PBXCard2Dealer
         ' 
         PBXCard2Dealer.BackColor = Color.Transparent
+        PBXCard2Dealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard2Dealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard2Dealer.Location = New Point(461, 122)
         PBXCard2Dealer.Name = "PBXCard2Dealer"
@@ -305,6 +311,7 @@ Partial Class WNDMain
         ' PBXCard3Dealer
         ' 
         PBXCard3Dealer.BackColor = Color.Transparent
+        PBXCard3Dealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard3Dealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard3Dealer.Location = New Point(311, 122)
         PBXCard3Dealer.Name = "PBXCard3Dealer"
@@ -316,6 +323,7 @@ Partial Class WNDMain
         ' PBXCard4Dealer
         ' 
         PBXCard4Dealer.BackColor = Color.Transparent
+        PBXCard4Dealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard4Dealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard4Dealer.Location = New Point(161, 122)
         PBXCard4Dealer.Name = "PBXCard4Dealer"
@@ -327,6 +335,7 @@ Partial Class WNDMain
         ' PBXCard5Dealer
         ' 
         PBXCard5Dealer.BackColor = Color.Transparent
+        PBXCard5Dealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard5Dealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard5Dealer.Location = New Point(11, 122)
         PBXCard5Dealer.Name = "PBXCard5Dealer"
@@ -338,6 +347,7 @@ Partial Class WNDMain
         ' PBXCardBackDealer
         ' 
         PBXCardBackDealer.BackColor = Color.Transparent
+        PBXCardBackDealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCardBackDealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCardBackDealer.Location = New Point(767, 97)
         PBXCardBackDealer.Name = "PBXCardBackDealer"
@@ -349,6 +359,7 @@ Partial Class WNDMain
         ' PBXCard1Dealer
         ' 
         PBXCard1Dealer.BackColor = Color.Transparent
+        PBXCard1Dealer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard1Dealer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard1Dealer.Location = New Point(611, 122)
         PBXCard1Dealer.Name = "PBXCard1Dealer"
@@ -360,6 +371,7 @@ Partial Class WNDMain
         ' PBXCard5Player
         ' 
         PBXCard5Player.BackColor = Color.Transparent
+        PBXCard5Player.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard5Player.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard5Player.Location = New Point(802, 367)
         PBXCard5Player.Name = "PBXCard5Player"
@@ -371,6 +383,7 @@ Partial Class WNDMain
         ' PBXCardBackPlayer
         ' 
         PBXCardBackPlayer.BackColor = Color.Transparent
+        PBXCardBackPlayer.BackgroundImage = My.Resources.Resources.CardBack
         PBXCardBackPlayer.BackgroundImageLayout = ImageLayout.Zoom
         PBXCardBackPlayer.Location = New Point(12, 342)
         PBXCardBackPlayer.Name = "PBXCardBackPlayer"
@@ -382,6 +395,7 @@ Partial Class WNDMain
         ' PBXCard1Player
         ' 
         PBXCard1Player.BackColor = Color.Transparent
+        PBXCard1Player.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard1Player.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard1Player.Location = New Point(202, 367)
         PBXCard1Player.Name = "PBXCard1Player"
@@ -393,6 +407,7 @@ Partial Class WNDMain
         ' PBXCard2Player
         ' 
         PBXCard2Player.BackColor = Color.Transparent
+        PBXCard2Player.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard2Player.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard2Player.Location = New Point(352, 367)
         PBXCard2Player.Name = "PBXCard2Player"
@@ -404,6 +419,7 @@ Partial Class WNDMain
         ' PBXCard3Player
         ' 
         PBXCard3Player.BackColor = Color.Transparent
+        PBXCard3Player.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard3Player.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard3Player.Location = New Point(502, 367)
         PBXCard3Player.Name = "PBXCard3Player"
@@ -415,6 +431,7 @@ Partial Class WNDMain
         ' PBXCard4Player
         ' 
         PBXCard4Player.BackColor = Color.Transparent
+        PBXCard4Player.BackgroundImage = My.Resources.Resources.CardBack
         PBXCard4Player.BackgroundImageLayout = ImageLayout.Zoom
         PBXCard4Player.Location = New Point(652, 367)
         PBXCard4Player.Name = "PBXCard4Player"
@@ -514,21 +531,80 @@ Partial Class WNDMain
         LBLStatGamesPlayedValue.TextAlign = ContentAlignment.MiddleCenter
         LBLStatGamesPlayedValue.Visible = False
         ' 
+        ' LBLBet1
+        ' 
+        LBLBet1.BackColor = Color.Transparent
+        LBLBet1.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBet1.ForeColor = Color.White
+        LBLBet1.Location = New Point(186, 447)
+        LBLBet1.Name = "LBLBet1"
+        LBLBet1.Size = New Size(588, 82)
+        LBLBet1.TabIndex = 42
+        LBLBet1.Text = "Mise: 0"
+        LBLBet1.TextAlign = ContentAlignment.MiddleCenter
+        LBLBet1.Visible = False
+        ' 
+        ' LBLMaxBet
+        ' 
+        LBLMaxBet.BackColor = Color.Transparent
+        LBLMaxBet.Font = New Font("Comic Sans MS", 20F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLMaxBet.ForeColor = Color.White
+        LBLMaxBet.Location = New Point(47, 660)
+        LBLMaxBet.Name = "LBLMaxBet"
+        LBLMaxBet.Size = New Size(866, 43)
+        LBLMaxBet.TabIndex = 43
+        LBLMaxBet.Text = "Vous ne pouvez pas dépasser une mise de 100 points!"
+        LBLMaxBet.TextAlign = ContentAlignment.MiddleCenter
+        LBLMaxBet.Visible = False
+        ' 
+        ' LBLBroke
+        ' 
+        LBLBroke.BackColor = Color.Transparent
+        LBLBroke.Font = New Font("Comic Sans MS", 20F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBroke.ForeColor = Color.White
+        LBLBroke.Location = New Point(47, 661)
+        LBLBroke.Name = "LBLBroke"
+        LBLBroke.Size = New Size(866, 43)
+        LBLBroke.TabIndex = 44
+        LBLBroke.Text = "Vous n'avez plus de points disponibles!"
+        LBLBroke.TextAlign = ContentAlignment.MiddleCenter
+        LBLBroke.Visible = False
+        ' 
+        ' LBLBet2
+        ' 
+        LBLBet2.BackColor = Color.Transparent
+        LBLBet2.Font = New Font("Comic Sans MS", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBet2.ForeColor = Color.White
+        LBLBet2.Location = New Point(352, 608)
+        LBLBet2.Name = "LBLBet2"
+        LBLBet2.Size = New Size(248, 40)
+        LBLBet2.TabIndex = 45
+        LBLBet2.Text = "Mise: 0"
+        LBLBet2.TextAlign = ContentAlignment.MiddleCenter
+        LBLBet2.Visible = False
+        ' 
+        ' LBLBank2
+        ' 
+        LBLBank2.BackColor = Color.Transparent
+        LBLBank2.Font = New Font("Comic Sans MS", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLBank2.ForeColor = Color.White
+        LBLBank2.Location = New Point(352, 660)
+        LBLBank2.Name = "LBLBank2"
+        LBLBank2.Size = New Size(248, 40)
+        LBLBank2.TabIndex = 46
+        LBLBank2.Text = "Banque: 500"
+        LBLBank2.TextAlign = ContentAlignment.MiddleCenter
+        LBLBank2.Visible = False
+        ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_1
+        BackgroundImage = My.Resources.Resources.Page_5
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
-        Controls.Add(BTNKeep)
-        Controls.Add(BTNTurn)
-        Controls.Add(BTNLeave)
-        Controls.Add(LBLBank)
-        Controls.Add(BTNPlay)
-        Controls.Add(BTNSound)
-        Controls.Add(BTNInstructions)
-        Controls.Add(LBLTitle)
+        Controls.Add(LBLBank2)
+        Controls.Add(LBLBet2)
         Controls.Add(PBXCard5Player)
         Controls.Add(PBXCardBackPlayer)
         Controls.Add(PBXCard1Player)
@@ -541,6 +617,15 @@ Partial Class WNDMain
         Controls.Add(PBXCard4Dealer)
         Controls.Add(PBXCard3Dealer)
         Controls.Add(PBXCard2Dealer)
+        Controls.Add(LBLBet1)
+        Controls.Add(BTNKeep)
+        Controls.Add(BTNTurn)
+        Controls.Add(BTNLeave)
+        Controls.Add(LBLBank1)
+        Controls.Add(BTNPlay)
+        Controls.Add(BTNSound)
+        Controls.Add(BTNInstructions)
+        Controls.Add(LBLTitle)
         Controls.Add(BTNSelect100)
         Controls.Add(BTNSelect50)
         Controls.Add(BTNSelect25)
@@ -557,6 +642,8 @@ Partial Class WNDMain
         Controls.Add(BTNRestart)
         Controls.Add(LBLWinMessage)
         Controls.Add(LBLWinPoints)
+        Controls.Add(LBLBroke)
+        Controls.Add(LBLMaxBet)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "WNDMain"
@@ -589,7 +676,7 @@ Partial Class WNDMain
     Friend WithEvents BTNSelect50 As Label
     Friend WithEvents BTNSelect100 As Label
     Friend WithEvents BTNPlay As Label
-    Friend WithEvents LBLBank As Label
+    Friend WithEvents LBLBank1 As Label
     Friend WithEvents BTNLeave As Label
     Friend WithEvents LBLSelectCard As Label
     Friend WithEvents BTNTurn As Label
@@ -613,5 +700,10 @@ Partial Class WNDMain
     Friend WithEvents LBLStatPointsValue As Label
     Friend WithEvents BTNRestart As Label
     Friend WithEvents LBLStatGamesPlayedValue As Label
+    Friend WithEvents LBLBet1 As Label
+    Friend WithEvents LBLMaxBet As Label
+    Friend WithEvents LBLBroke As Label
+    Friend WithEvents LBLBet2 As Label
+    Friend WithEvents LBLBank2 As Label
 
 End Class

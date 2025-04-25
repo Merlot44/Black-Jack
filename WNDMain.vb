@@ -1,4 +1,24 @@
-﻿Public Class WNDMain
+﻿Imports System.ComponentModel.DataAnnotations
+Imports System.Threading
+
+Public Class WNDMain
+    Public Bank As Integer = 500
+    Public Bet As Integer = 0
+    Public Suit As Integer = 0
+    Public Number As Integer = 0
+    Public Card1PlayerNumber As Integer = 0
+    Public Card2PlayerNumber As Integer = 0
+    Public Card3PlayerNumber As Integer = 0
+    Public Card4PlayerNumber As Integer = 0
+    Public Card5PlayerNumber As Integer = 0
+    Public Card1DealerNumber As Integer = 0
+    Public Card2DealerNumber As Integer = 0
+    Public Card3DealerNumber As Integer = 0
+    Public Card4DealerNumber As Integer = 0
+    Public Card5DealerNumber As Integer = 0
+    Public DealerCards As Integer = 0
+    Public DealerPoints As Integer = 0
+    Public DealerAces As Integer = 0
     Private Sub BTNStart_MouseHover(sender As Object, e As EventArgs) Handles BTNStart.MouseHover
         BTNStart.Cursor = Cursors.Hand
     End Sub
@@ -7,6 +27,24 @@
     End Sub
     Private Sub BTNSound_MouseHover(sender As Object, e As EventArgs) Handles BTNSound.MouseHover
         BTNSound.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNSelect5_MouseHover(sender As Object, e As EventArgs) Handles BTNSelect5.MouseHover
+        BTNSelect5.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNSelect10_MouseHover(sender As Object, e As EventArgs) Handles BTNSelect10.MouseHover
+        BTNSelect10.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNSelect25_MouseHover(sender As Object, e As EventArgs) Handles BTNSelect25.MouseHover
+        BTNSelect25.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNSelect50_MouseHover(sender As Object, e As EventArgs) Handles BTNSelect50.MouseHover
+        BTNSelect50.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNSelect100_MouseHover(sender As Object, e As EventArgs) Handles BTNSelect100.MouseHover
+        BTNSelect100.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNPlay_MouseHover(sender As Object, e As EventArgs) Handles BTNPlay.MouseHover
+        BTNPlay.Cursor = Cursors.Hand
     End Sub
     Private Sub BTNInstructions_Click(sender As Object, e As EventArgs) Handles BTNInstructions.Click
         BTNInstructions.Visible = False
@@ -26,7 +64,134 @@
         BTNSelect25.Visible = True
         BTNSelect50.Visible = True
         BTNSelect100.Visible = True
-        LBLBank.Visible = True
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBet1.Visible = True
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBank1.Visible = True
         BTNPlay.Visible = True
+    End Sub
+    Private Sub BTNSelect5_Click(sender As Object, e As EventArgs) Handles BTNSelect5.Click
+        If Bet <= 95 And Bank >= 5 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = False
+            Bet += 5
+            Bank -= 5
+        ElseIf Bet > 95 Then
+            LBLBroke.Visible = False
+            LBLMaxBet.Visible = True
+        ElseIf Bank < 5 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = True
+        End If
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+    End Sub
+    Private Sub BTNSelect10_Click(sender As Object, e As EventArgs) Handles BTNSelect10.Click
+        If Bet <= 90 And Bank >= 10 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = False
+            Bet += 10
+            Bank -= 10
+        ElseIf Bet > 90 Then
+            LBLBroke.Visible = False
+            LBLMaxBet.Visible = True
+        ElseIf Bank < 10 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = True
+        End If
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+    End Sub
+    Private Sub BTNSelect25_Click(sender As Object, e As EventArgs) Handles BTNSelect25.Click
+        If Bet <= 75 And Bank >= 25 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = False
+            Bet += 25
+            Bank -= 25
+        ElseIf Bet > 75 Then
+            LBLBroke.Visible = False
+            LBLMaxBet.Visible = True
+        ElseIf Bank < 25 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = True
+        End If
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+    End Sub
+    Private Sub BTNSelect50_Click(sender As Object, e As EventArgs) Handles BTNSelect50.Click
+        If Bet <= 50 And Bank >= 50 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = False
+            Bet += 50
+            Bank -= 50
+        ElseIf Bet > 50 Then
+            LBLBroke.Visible = False
+            LBLMaxBet.Visible = True
+        ElseIf Bank < 50 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = True
+        End If
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+    End Sub
+    Private Sub BTNSelect100_Click(sender As Object, e As EventArgs) Handles BTNSelect100.Click
+        If Bet <= 0 And Bank >= 100 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = False
+            Bet += 100
+            Bank -= 100
+        ElseIf Bet > 0 Then
+            LBLBroke.Visible = False
+            LBLMaxBet.Visible = True
+        ElseIf Bank < 100 Then
+            LBLMaxBet.Visible = False
+            LBLBroke.Visible = True
+        End If
+        LBLBet1.Text = "Mise: " + CStr(Bet)
+        LBLBank1.Text = "Banque: " + CStr(Bank)
+    End Sub
+    Private Sub BTNPlay_Click(sender As Object, e As EventArgs) Handles BTNPlay.Click
+        LBLSelectBet.Visible = False
+        BTNSelect5.Visible = False
+        BTNSelect10.Visible = False
+        BTNSelect25.Visible = False
+        BTNSelect50.Visible = False
+        BTNSelect100.Visible = False
+        LBLBet1.Visible = False
+        LBLBank1.Visible = False
+        LBLMaxBet.Visible = False
+        LBLBroke.Visible = False
+        BTNPlay.Visible = False
+        BackgroundImage = My.Resources.Page_5
+        LBLSelectCard.Visible = True
+        PBXCardBackDealer.Visible = True
+        PBXCardBackPlayer.Visible = True
+
+        ' Turn the dealer's first card
+        Randomize()
+        Suit = Fix(Rnd() * 4)
+        Number = Fix(Rnd() * 13)
+        Card1DealerNumber = (Suit * 100) + Number
+        PBXCard1Dealer.BackgroundImage = My.Resources.ResourceManager.GetObject("Card" + CStr(Format(Card1DealerNumber, "000")))
+        PBXCard1Dealer.Visible = True
+        DealerCards += 1
+        If Number > 9 Then
+            DealerPoints += 10
+        ElseIf Number <= 0 Then
+            DealerAces += 1
+            DealerPoints += 11
+        Else
+            DealerPoints += (Number + 1)
+        End If
+        BTNTurn.Visible = True
+        BTNKeep.Visible = True
+        LBLBet2.Visible = True
+        LBLBank2.Visible = True
+
+
+    End Sub
+    Private Sub BTNTurn_Click(sender As Object, e As EventArgs) Handles BTNTurn.Click
+
+
     End Sub
 End Class
