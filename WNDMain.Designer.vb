@@ -35,7 +35,7 @@ Partial Class WNDMain
         BTNSelect50 = New Label()
         BTNSelect100 = New Label()
         BTNPlay = New Label()
-        LBLBank1 = New Label()
+        LBLPoints1 = New Label()
         BTNLeave = New Label()
         LBLSelectCard = New Label()
         BTNTurn = New Label()
@@ -63,7 +63,8 @@ Partial Class WNDMain
         LBLMaxBet = New Label()
         LBLBroke = New Label()
         LBLBet2 = New Label()
-        LBLBank2 = New Label()
+        LBLPoints2 = New Label()
+        LBLBuffer = New Label()
         CType(BTNSound, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard2Dealer, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard3Dealer, ComponentModel.ISupportInitialize).BeginInit()
@@ -231,18 +232,18 @@ Partial Class WNDMain
         BTNPlay.TextAlign = ContentAlignment.MiddleCenter
         BTNPlay.Visible = False
         ' 
-        ' LBLBank1
+        ' LBLPoints1
         ' 
-        LBLBank1.BackColor = Color.Transparent
-        LBLBank1.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLBank1.ForeColor = Color.White
-        LBLBank1.Location = New Point(186, 551)
-        LBLBank1.Name = "LBLBank1"
-        LBLBank1.Size = New Size(278, 97)
-        LBLBank1.TabIndex = 12
-        LBLBank1.Text = "Banque: 500"
-        LBLBank1.TextAlign = ContentAlignment.MiddleCenter
-        LBLBank1.Visible = False
+        LBLPoints1.BackColor = Color.Transparent
+        LBLPoints1.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLPoints1.ForeColor = Color.White
+        LBLPoints1.Location = New Point(186, 551)
+        LBLPoints1.Name = "LBLPoints1"
+        LBLPoints1.Size = New Size(278, 97)
+        LBLPoints1.TabIndex = 12
+        LBLPoints1.Text = "Points: 500"
+        LBLPoints1.TextAlign = ContentAlignment.MiddleCenter
+        LBLPoints1.Visible = False
         ' 
         ' BTNLeave
         ' 
@@ -584,28 +585,39 @@ Partial Class WNDMain
         LBLBet2.TextAlign = ContentAlignment.MiddleCenter
         LBLBet2.Visible = False
         ' 
-        ' LBLBank2
+        ' LBLPoints2
         ' 
-        LBLBank2.BackColor = Color.Transparent
-        LBLBank2.Font = New Font("Comic Sans MS", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LBLBank2.ForeColor = Color.White
-        LBLBank2.Location = New Point(352, 660)
-        LBLBank2.Name = "LBLBank2"
-        LBLBank2.Size = New Size(248, 40)
-        LBLBank2.TabIndex = 46
-        LBLBank2.Text = "Banque: 500"
-        LBLBank2.TextAlign = ContentAlignment.MiddleCenter
-        LBLBank2.Visible = False
+        LBLPoints2.BackColor = Color.Transparent
+        LBLPoints2.Font = New Font("Comic Sans MS", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLPoints2.ForeColor = Color.White
+        LBLPoints2.Location = New Point(352, 660)
+        LBLPoints2.Name = "LBLPoints2"
+        LBLPoints2.Size = New Size(248, 40)
+        LBLPoints2.TabIndex = 46
+        LBLPoints2.Text = "Points: 500"
+        LBLPoints2.TextAlign = ContentAlignment.MiddleCenter
+        LBLPoints2.Visible = False
+        ' 
+        ' LBLBuffer
+        ' 
+        LBLBuffer.AutoSize = True
+        LBLBuffer.BackColor = Color.Transparent
+        LBLBuffer.ForeColor = Color.Transparent
+        LBLBuffer.Location = New Point(359, 3)
+        LBLBuffer.Name = "LBLBuffer"
+        LBLBuffer.Size = New Size(0, 15)
+        LBLBuffer.TabIndex = 47
         ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_5
+        BackgroundImage = My.Resources.Resources.Page_8
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
+        Controls.Add(LBLBuffer)
         Controls.Add(LBLWinPoints)
-        Controls.Add(LBLBank2)
+        Controls.Add(LBLPoints2)
         Controls.Add(LBLBet2)
         Controls.Add(PBXCard5Player)
         Controls.Add(PBXCardBackPlayer)
@@ -623,7 +635,7 @@ Partial Class WNDMain
         Controls.Add(BTNKeep)
         Controls.Add(BTNTurn)
         Controls.Add(BTNLeave)
-        Controls.Add(LBLBank1)
+        Controls.Add(LBLPoints1)
         Controls.Add(BTNPlay)
         Controls.Add(BTNSound)
         Controls.Add(BTNInstructions)
@@ -663,6 +675,7 @@ Partial Class WNDMain
         CType(PBXCard3Player, ComponentModel.ISupportInitialize).EndInit()
         CType(PBXCard4Player, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents LBLTitle As Label
@@ -677,7 +690,7 @@ Partial Class WNDMain
     Friend WithEvents BTNSelect50 As Label
     Friend WithEvents BTNSelect100 As Label
     Friend WithEvents BTNPlay As Label
-    Friend WithEvents LBLBank1 As Label
+    Friend WithEvents LBLPoints1 As Label
     Friend WithEvents BTNLeave As Label
     Friend WithEvents LBLSelectCard As Label
     Friend WithEvents BTNTurn As Label
@@ -705,6 +718,7 @@ Partial Class WNDMain
     Friend WithEvents LBLMaxBet As Label
     Friend WithEvents LBLBroke As Label
     Friend WithEvents LBLBet2 As Label
-    Friend WithEvents LBLBank2 As Label
+    Friend WithEvents LBLPoints2 As Label
+    Friend WithEvents LBLBuffer As Label
 
 End Class
