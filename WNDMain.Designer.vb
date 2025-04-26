@@ -260,9 +260,10 @@ Partial Class WNDMain
         ' LBLSelectCard
         ' 
         LBLSelectCard.BackColor = Color.Transparent
-        LBLSelectCard.Font = New Font("Comic Sans MS", 20F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLSelectCard.Font = New Font("Comic Sans MS", 19F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LBLSelectCard.ForeColor = Color.White
         LBLSelectCard.Location = New Point(219, 20)
+        LBLSelectCard.Margin = New Padding(0)
         LBLSelectCard.Name = "LBLSelectCard"
         LBLSelectCard.Size = New Size(522, 75)
         LBLSelectCard.TabIndex = 14
@@ -600,9 +601,10 @@ Partial Class WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_1
+        BackgroundImage = My.Resources.Resources.Page_5
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
+        Controls.Add(LBLWinPoints)
         Controls.Add(LBLBank2)
         Controls.Add(LBLBet2)
         Controls.Add(PBXCard5Player)
@@ -640,10 +642,9 @@ Partial Class WNDMain
         Controls.Add(LBLStatGamesPlayed)
         Controls.Add(LBLStatPoints)
         Controls.Add(BTNRestart)
-        Controls.Add(LBLWinMessage)
-        Controls.Add(LBLWinPoints)
         Controls.Add(LBLBroke)
         Controls.Add(LBLMaxBet)
+        Controls.Add(LBLWinMessage)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "WNDMain"

@@ -13,6 +13,10 @@ Public Class WNDMain
     Public DealerPoints As Integer = 0
     Public PlayerAces As Integer = 0
     Public DealerAces As Integer = 0
+    Public GamesPlayed As Integer = 0
+    Public MatchesPlayed As Integer = 0
+    Public TotalPlayerPoints As Integer = 0
+    Public TotalDealerPoints As Integer = 0
     Private Sub WNDMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         Randomize()
     End Sub
@@ -230,15 +234,68 @@ Public Class WNDMain
             Else
                 PlayerPoints += (Number + 1)
             End If
-            LBLSelectCard.Text = PlayerPoints
             If PlayerPoints > 21 Then
-                While PlayerPoints > 21 Or PlayerAces > 1
-                    PlayerAces -= 1
-                    PlayerPoints -= 10
-                End While
+                If PlayerAces > 0 Then
+                    While PlayerPoints > 21 Or PlayerAces > 0
+                        PlayerAces -= 1
+                        PlayerPoints -= 10
+                    End While
+                End If
                 If PlayerPoints > 21 Then
                     '------------------------------------------Make Player Lose------------------------------------------------
+                    ' Wait a second
+                    GamesPlayed += 1
+                    LBLSelectCard.Visible = False
+                    PBXCardBackDealer.Visible = False
+                    PBXCard1Dealer.Visible = False
+                    PBXCard2Dealer.Visible = False
+                    PBXCard3Dealer.Visible = False
+                    PBXCard4Dealer.Visible = False
+                    PBXCard5Dealer.Visible = False
+                    PBXCardBackPlayer.Visible = False
+                    PBXCard1Player.Visible = False
+                    PBXCard2Player.Visible = False
+                    PBXCard3Player.Visible = False
+                    PBXCard4Player.Visible = False
+                    PBXCard5Player.Visible = False
+                    LBLBank2.Visible = False
+                    LBLBet2.Visible = False
+                    BTNTurn.Visible = False
+                    BTNKeep.Visible = False
+                    BackgroundImage = My.Resources.Page_6
+                    LBLWinPoints.Text = "Vous avez dépassé 21!" + vbCrLf + "Vous aves perdu vôtre mise!"
+                    LBLWinPoints.Visible = True
+                    ' Wait a second
+                    LBLWinPoints.Visible = False
+                    BackgroundImage = My.Resources.Page_7
+                    If GamesPlayed >= 5 Then
+                        MatchesPlayed += 1
+                        TotalPlayerPoints += PlayerPoints
+                        LBLWinMessage.Text = "Le match est terminé, vous avex perdu!"
+                        LBLWinMessage.Visible = True
+                        LBLStatPoints.Visible = True
+                        LBLStatPointsValue.Text = CStr(TotalPlayerPoints) ' - TotalDealerPoints)
+                        LBLStatPointsValue.Visible = True
+                        LBLStatGamesPlayed.Visible = True
+                        LBLStatGamesPlayedValue.Text = CStr(GamesPlayed)
+                        LBLStatGamesPlayedValue.Visible = True
+                        BTNRestart.Visible = True
+                    Else
+                        LBLSelectBet.Visible = True
+                        BTNSelect5.Visible = False
+                        BTNSelect10.Visible = False
+                        BTNSelect25.Visible = False
+                        BTNSelect50.Visible = False
+                        BTNSelect100.Visible = False
+                        BTNPlay.Visible = True
+                        LBLBank1.Visible = True
+                        BTNLeave.Visible = True
+                    End If
+                ElseIf PlayerCards >= 5 Then
+                    ' ------------------------------------------- GAGNÉ ----------------------------------------------------------
                 End If
+            ElseIf PlayerCards >= 5 Then
+                ' ------------------------------------------- GAGNÉ ----------------------------------------------------------
             End If
         End If
     End Sub
