@@ -6,19 +6,16 @@ Public Class WNDMain
     Public Bet As Integer = 0
     Public Suit As Integer = 0
     Public Number As Integer = 0
-    Public Card1PlayerNumber As Integer = 0
-    Public Card2PlayerNumber As Integer = 0
-    Public Card3PlayerNumber As Integer = 0
-    Public Card4PlayerNumber As Integer = 0
-    Public Card5PlayerNumber As Integer = 0
-    Public Card1DealerNumber As Integer = 0
-    Public Card2DealerNumber As Integer = 0
-    Public Card3DealerNumber As Integer = 0
-    Public Card4DealerNumber As Integer = 0
-    Public Card5DealerNumber As Integer = 0
+    Public CardNumber As Integer = 0
+    Public PlayerCards As Integer = 0
     Public DealerCards As Integer = 0
+    Public PlayerPoints As Integer = 0
     Public DealerPoints As Integer = 0
+    Public PlayerAces As Integer = 0
     Public DealerAces As Integer = 0
+    Private Sub WNDMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Randomize()
+    End Sub
     Private Sub BTNStart_MouseHover(sender As Object, e As EventArgs) Handles BTNStart.MouseHover
         BTNStart.Cursor = Cursors.Hand
     End Sub
@@ -45,6 +42,9 @@ Public Class WNDMain
     End Sub
     Private Sub BTNPlay_MouseHover(sender As Object, e As EventArgs) Handles BTNPlay.MouseHover
         BTNPlay.Cursor = Cursors.Hand
+    End Sub
+    Private Sub BTNTurn_MouseHover(sender As Object, e As EventArgs) Handles BTNTurn.MouseHover
+        BTNTurn.Cursor = Cursors.Hand
     End Sub
     Private Sub BTNInstructions_Click(sender As Object, e As EventArgs) Handles BTNInstructions.Click
         BTNInstructions.Visible = False
@@ -85,6 +85,8 @@ Public Class WNDMain
         End If
         LBLBet1.Text = "Mise: " + CStr(Bet)
         LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBet2.Text = "Mise: " + CStr(Bet)
+        LBLBank2.Text = "Banque: " + CStr(Bank)
     End Sub
     Private Sub BTNSelect10_Click(sender As Object, e As EventArgs) Handles BTNSelect10.Click
         If Bet <= 90 And Bank >= 10 Then
@@ -101,6 +103,8 @@ Public Class WNDMain
         End If
         LBLBet1.Text = "Mise: " + CStr(Bet)
         LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBet2.Text = "Mise: " + CStr(Bet)
+        LBLBank2.Text = "Banque: " + CStr(Bank)
     End Sub
     Private Sub BTNSelect25_Click(sender As Object, e As EventArgs) Handles BTNSelect25.Click
         If Bet <= 75 And Bank >= 25 Then
@@ -117,6 +121,8 @@ Public Class WNDMain
         End If
         LBLBet1.Text = "Mise: " + CStr(Bet)
         LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBet2.Text = "Mise: " + CStr(Bet)
+        LBLBank2.Text = "Banque: " + CStr(Bank)
     End Sub
     Private Sub BTNSelect50_Click(sender As Object, e As EventArgs) Handles BTNSelect50.Click
         If Bet <= 50 And Bank >= 50 Then
@@ -133,6 +139,8 @@ Public Class WNDMain
         End If
         LBLBet1.Text = "Mise: " + CStr(Bet)
         LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBet2.Text = "Mise: " + CStr(Bet)
+        LBLBank2.Text = "Banque: " + CStr(Bank)
     End Sub
     Private Sub BTNSelect100_Click(sender As Object, e As EventArgs) Handles BTNSelect100.Click
         If Bet <= 0 And Bank >= 100 Then
@@ -149,6 +157,8 @@ Public Class WNDMain
         End If
         LBLBet1.Text = "Mise: " + CStr(Bet)
         LBLBank1.Text = "Banque: " + CStr(Bank)
+        LBLBet2.Text = "Mise: " + CStr(Bet)
+        LBLBank2.Text = "Banque: " + CStr(Bank)
     End Sub
     Private Sub BTNPlay_Click(sender As Object, e As EventArgs) Handles BTNPlay.Click
         LBLSelectBet.Visible = False
@@ -168,11 +178,10 @@ Public Class WNDMain
         PBXCardBackPlayer.Visible = True
 
         ' Turn the dealer's first card
-        Randomize()
         Suit = Fix(Rnd() * 4)
         Number = Fix(Rnd() * 13)
-        Card1DealerNumber = (Suit * 100) + Number
-        PBXCard1Dealer.BackgroundImage = My.Resources.ResourceManager.GetObject("Card" + CStr(Format(Card1DealerNumber, "000")))
+        CardNumber = (Suit * 100) + Number
+        PBXCard1Dealer.BackgroundImage = My.Resources.ResourceManager.GetObject("Card" + CStr(Format(CardNumber, "000")))
         PBXCard1Dealer.Visible = True
         DealerCards += 1
         If Number > 9 Then
@@ -183,15 +192,54 @@ Public Class WNDMain
         Else
             DealerPoints += (Number + 1)
         End If
+
+        ' Turn the player's first card
+        Suit = Fix(Rnd() * 4)
+        Number = Fix(Rnd() * 13)
+        CardNumber = (Suit * 100) + Number
+        PBXCard1Player.BackgroundImage = My.Resources.ResourceManager.GetObject("Card" + CStr(Format(CardNumber, "000")))
+        PBXCard1Player.Visible = True
+        PlayerCards += 1
+        If Number > 9 Then
+            PlayerPoints += 10
+        ElseIf Number <= 0 Then
+            PlayerAces += 1
+            PlayerPoints += 11
+        Else
+            PlayerPoints += (Number + 1)
+        End If
+
         BTNTurn.Visible = True
         BTNKeep.Visible = True
         LBLBet2.Visible = True
         LBLBank2.Visible = True
-
-
     End Sub
     Private Sub BTNTurn_Click(sender As Object, e As EventArgs) Handles BTNTurn.Click
-
-
+        If PlayerCards < 5 Then
+            Suit = Fix(Rnd() * 4)
+            Number = Fix(Rnd() * 13)
+            CardNumber = (Suit * 100) + Number
+            PlayerCards += 1
+            Me.Controls("PBXCard" + CStr(PlayerCards) + "Player").BackgroundImage = My.Resources.ResourceManager.GetObject("Card" + CStr(Format(CardNumber, "000")))
+            Me.Controls("PBXCard" + CStr(PlayerCards) + "Player").Visible = True
+            If Number > 9 Then
+                PlayerPoints += 10
+            ElseIf Number <= 0 Then
+                PlayerAces += 1
+                PlayerPoints += 11
+            Else
+                PlayerPoints += (Number + 1)
+            End If
+            LBLSelectCard.Text = PlayerPoints
+            If PlayerPoints > 21 Then
+                While PlayerPoints > 21 Or PlayerAces > 1
+                    PlayerAces -= 1
+                    PlayerPoints -= 10
+                End While
+                If PlayerPoints > 21 Then
+                    '------------------------------------------Make Player Lose------------------------------------------------
+                End If
+            End If
+        End If
     End Sub
 End Class

@@ -600,7 +600,7 @@ Partial Class WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_5
+        BackgroundImage = My.Resources.Resources.Page_1
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
         Controls.Add(LBLBank2)
