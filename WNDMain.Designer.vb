@@ -64,7 +64,6 @@ Partial Class WNDMain
         LBLBroke = New Label()
         LBLBet2 = New Label()
         LBLPoints2 = New Label()
-        LBLBuffer = New Label()
         CType(BTNSound, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard2Dealer, ComponentModel.ISupportInitialize).BeginInit()
         CType(PBXCard3Dealer, ComponentModel.ISupportInitialize).BeginInit()
@@ -445,7 +444,7 @@ Partial Class WNDMain
         ' LBLWinPoints
         ' 
         LBLWinPoints.BackColor = Color.Transparent
-        LBLWinPoints.Font = New Font("Comic Sans MS", 30F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LBLWinPoints.Font = New Font("Comic Sans MS", 28F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LBLWinPoints.ForeColor = Color.White
         LBLWinPoints.Location = New Point(196, 282)
         LBLWinPoints.Name = "LBLWinPoints"
@@ -464,7 +463,7 @@ Partial Class WNDMain
         LBLWinMessage.Name = "LBLWinMessage"
         LBLWinMessage.Size = New Size(696, 160)
         LBLWinMessage.TabIndex = 36
-        LBLWinMessage.Text = "Le match est terminé," & vbCrLf & "Vous avez gagnés!"
+        LBLWinMessage.Text = "Le match est terminé!" & vbCrLf & "Vous avez gagné!"
         LBLWinMessage.TextAlign = ContentAlignment.MiddleCenter
         LBLWinMessage.Visible = False
         ' 
@@ -598,27 +597,28 @@ Partial Class WNDMain
         LBLPoints2.TextAlign = ContentAlignment.MiddleCenter
         LBLPoints2.Visible = False
         ' 
-        ' LBLBuffer
-        ' 
-        LBLBuffer.AutoSize = True
-        LBLBuffer.BackColor = Color.Transparent
-        LBLBuffer.ForeColor = Color.Transparent
-        LBLBuffer.Location = New Point(359, 3)
-        LBLBuffer.Name = "LBLBuffer"
-        LBLBuffer.Size = New Size(0, 15)
-        LBLBuffer.TabIndex = 47
-        ' 
         ' WNDMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Page_8
+        BackgroundImage = My.Resources.Resources.Page_1
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(958, 718)
-        Controls.Add(LBLBuffer)
-        Controls.Add(LBLWinPoints)
         Controls.Add(LBLPoints2)
         Controls.Add(LBLBet2)
+        Controls.Add(BTNKeep)
+        Controls.Add(BTNTurn)
+        Controls.Add(BTNLeave)
+        Controls.Add(LBLPoints1)
+        Controls.Add(BTNPlay)
+        Controls.Add(BTNSound)
+        Controls.Add(BTNInstructions)
+        Controls.Add(TBXInstructions)
+        Controls.Add(BTNStart)
+        Controls.Add(BTNRestart)
+        Controls.Add(LBLBroke)
+        Controls.Add(LBLMaxBet)
+        Controls.Add(LBLWinMessage)
         Controls.Add(PBXCard5Player)
         Controls.Add(PBXCardBackPlayer)
         Controls.Add(PBXCard1Player)
@@ -631,32 +631,20 @@ Partial Class WNDMain
         Controls.Add(PBXCard4Dealer)
         Controls.Add(PBXCard3Dealer)
         Controls.Add(PBXCard2Dealer)
+        Controls.Add(LBLWinPoints)
         Controls.Add(LBLBet1)
-        Controls.Add(BTNKeep)
-        Controls.Add(BTNTurn)
-        Controls.Add(BTNLeave)
-        Controls.Add(LBLPoints1)
-        Controls.Add(BTNPlay)
-        Controls.Add(BTNSound)
-        Controls.Add(BTNInstructions)
-        Controls.Add(LBLTitle)
         Controls.Add(BTNSelect100)
         Controls.Add(BTNSelect50)
         Controls.Add(BTNSelect25)
         Controls.Add(BTNSelect10)
         Controls.Add(BTNSelect5)
-        Controls.Add(TBXInstructions)
-        Controls.Add(BTNStart)
-        Controls.Add(LBLSelectCard)
-        Controls.Add(LBLSelectBet)
         Controls.Add(LBLStatGamesPlayedValue)
         Controls.Add(LBLStatPointsValue)
         Controls.Add(LBLStatGamesPlayed)
         Controls.Add(LBLStatPoints)
-        Controls.Add(BTNRestart)
-        Controls.Add(LBLBroke)
-        Controls.Add(LBLMaxBet)
-        Controls.Add(LBLWinMessage)
+        Controls.Add(LBLSelectBet)
+        Controls.Add(LBLSelectCard)
+        Controls.Add(LBLTitle)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "WNDMain"
@@ -675,7 +663,6 @@ Partial Class WNDMain
         CType(PBXCard3Player, ComponentModel.ISupportInitialize).EndInit()
         CType(PBXCard4Player, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents LBLTitle As Label
@@ -719,6 +706,5 @@ Partial Class WNDMain
     Friend WithEvents LBLBroke As Label
     Friend WithEvents LBLBet2 As Label
     Friend WithEvents LBLPoints2 As Label
-    Friend WithEvents LBLBuffer As Label
 
 End Class
