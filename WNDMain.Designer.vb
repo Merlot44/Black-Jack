@@ -646,6 +646,7 @@ Partial Class WNDMain
         Controls.Add(LBLSelectCard)
         Controls.Add(LBLTitle)
         FormBorderStyle = FormBorderStyle.FixedSingle
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "WNDMain"
         Text = "Black Jack"

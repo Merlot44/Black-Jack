@@ -1,6 +1,12 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 Imports System.Threading
 
+' Black Jack
+' By: Merlot44
+' Date: 4/24/2025
+' Version: 1.0.0
+' Github Repository: www.github.com/Merlot44/Black-Jack/
+
 Public Class WNDMain
     Public Points As Integer = 500
     Public Bet As Integer = 0
